@@ -2,8 +2,6 @@
   "extends": [
     "plugin:jsx-a11y/recommended",
     "plugin:import/recommended",
-    "plugin:jest/recommended",
-    "plugin:jest-dom/recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:react/jsx-runtime",
     "next/core-web-vitals",
@@ -11,14 +9,7 @@
     "prettier"
   ],
   "parser": "@typescript-eslint/parser",
-  "plugins": [
-    "@typescript-eslint",
-    "simple-import-sort",
-    "import",
-    "jsx-a11y",
-    "jest",
-    "jest-dom"
-  ],
+  "plugins": ["simple-import-sort", "import"],
   "rules": {
     "import/no-empty-named-blocks": "error",
     "import/first": "error",
@@ -34,7 +25,11 @@
         "**/__tests__/**/*.[jt]s?(x)",
         "**/?(*.)+(spec|test).[jt]s?(x)"
       ],
-      "extends": ["plugin:testing-library/react"]
+      "extends": [
+        "plugin:testing-library/react",
+        "plugin:jest/recommended",
+        "plugin:jest-dom/recommended"
+      ]
     }
   ]
 }
